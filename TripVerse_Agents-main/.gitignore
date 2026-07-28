@@ -1,0 +1,6 @@
+.env
+venv/
+__pycache__/
+*.pyc
+trips.db
+node_modules/
