@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripVerse Stay Agent - Premium Travel Planner</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Leaflet CSS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <!-- Custom Style -->
+    <link rel="stylesheet" href="/static/style.css?v=2.0.2">
+</head>
+<body>
+    <!-- Ambient Warm Blobs Background (Peach, Sage & Sand) -->
+    <div class="neon-sky-ambient">
+        <div class="glow-blob blob-peach"></div>
+        <div class="glow-blob blob-sage"></div>
+        <div class="glow-blob blob-sand"></div>
+    </div>
+
+    <div class="app-container">
+        <!-- Sidebar: Travel Journal History -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <i class="fa-solid fa-plane-departure brand-icon"></i>
+                    <h2>TripVerse <span>Agent</span></h2>
+                </div>
+                <button class="close-sidebar-btn" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="sidebar-search">
+                <div class="search-input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="historySearch" placeholder="Search travel logs...">
+                </div>
+                <div class="filter-controls">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="filterBookmarked">
+                        <span class="checkmark"></span>
+                        <span class="label-text"><i class="fa-solid fa-heart"></i> Favorites only</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="history-list" id="historyList">
+                <div class="loading-history"><i class="fa-solid fa-compass fa-spin"></i> Reading logbook...</div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="btn btn-secondary btn-full" id="showStatsBtn">
+                    <i class="fa-solid fa-passport"></i> View Stats Dashboard
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Body -->
+        <main class="main-content">
+            <header class="top-nav">
+                <div class="nav-left">
+                    <button class="menu-btn" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+                    <h1><i class="fa-solid fa-earth-americas title-map-icon"></i> Stay Planner</h1>
+                </div>
+                <div class="nav-right">
+                    <div class="api-badge">
+                        <span class="dot pulse"></span>
+                        <span class="text">Search Engine Active</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-scroll">
+                <!-- Search Section (Styled as a boarding pass) -->
+                <section class="generator-section container">
+                    <div class="boarding-pass glass-card">
+                        <div class="ticket-header">
+                            <div class="ticket-logo">
+                                <i class="fa-solid fa-hotel"></i>
+                                <span>STAY PLAN TICKET & CONFIGURATOR</span>
+                            </div>
+                            <!-- Creative Flight Route Line -->
+                            <div class="flight-route-visual">
+                                <span class="airport-code">DEP</span>
+                                <div class="route-line-wrapper">
+                                    <div class="dot-start"></div>
+                                    <div class="line-glow"></div>
+                                    <i class="fa-solid fa-plane flying-plane"></i>
+                                    <div class="dot-end"></div>
+                                </div>
+                                <span class="airport-code" id="ticketDestCode">ARR</span>
+                            </div>
+                            <div class="ticket-flight-info">
+                                <span id="ticketDestDisplay">STAY: PENDING</span>
+                                <span class="premium-class-stamp" id="ticketStyleDisplay">ADVENTURE</span>
+                            </div>
+                        </div>
+
+                        <form id="stayForm" class="boarding-pass-form">
+                            <div class="ticket-main">
+                                <div class="form-grid">
+                                    <div class="form-group col-2">
+                                        <label for="destination"><i class="fa-solid fa-location-dot"></i> Destination City</label>
+                                        <input type="text" id="destination" placeholder="e.g. Paris, Tokyo, London" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkin"><i class="fa-solid fa-calendar-check"></i> Check-in</label>
+                                        <input type="date" id="checkin" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="checkout"><i class="fa-solid fa-calendar-xmark"></i> Check-out</label>
+                                        <input type="date" id="checkout" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="guests"><i class="fa-solid fa-users"></i> Guests</label>
+                                        <div class="counter-input">
+                                            <button type="button" class="counter-btn" id="guestMinus">-</button>
+                                            <input type="number" id="guests" value="1" min="1" max="10" readonly>
+                                            <button type="button" class="counter-btn" id="guestPlus">+</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="requirements"><i class="fa-solid fa-tags"></i> Preferences / Needs</label>
+                                        <input type="text" id="requirements" placeholder="e.g. free wifi, kitchen, rooftop views">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ticket-divider">
+                                <div class="notch top"></div>
+                                <div class="line"></div>
+                                <div class="notch bottom"></div>
+                            </div>
+
+                            <div class="ticket-stub">
+                                <div class="form-group">
+                                    <label for="budget"><i class="fa-solid fa-money-bill-wave"></i> Budget Tier</label>
+                                    <select id="budget">
+                                        <option value="Budget ($50-100/night)">Budget ($50-100)</option>
+                                        <option value="Mid-Range ($100-250/night)" selected>Mid-Range ($100-250)</option>
+                                        <option value="Luxury ($250-500/night)">Luxury ($250-500)</option>
+                                        <option value="Ultra Luxury ($500+/night)">Ultra Lux ($500+)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="currency"><i class="fa-solid fa-coins"></i> Preferred Currency</label>
+                                    <select id="currency">
+                                        <option value="USD" selected>USD ($)</option>
+                                        <option value="INR">INR (₹)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="THB">THB (฿)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label><i class="fa-solid fa-suitcase-rolling"></i> Travel Style</label>
+                                    <div class="badge-selector" id="travelStyleSelector">
+                                        <button type="button" class="badge-btn active" data-value="Adventure">Adventure</button>
+                                        <button type="button" class="badge-btn" data-value="Luxury">Luxury</button>
+                                        <button type="button" class="badge-btn" data-value="Family">Family</button>
+                                        <button type="button" class="badge-btn" data-value="Relaxation">Relax</button>
+                                    </div>
+                                </div>
+
+                                <div class="form-group" style="display:none;">
+                                    <div class="badge-selector" id="accommodationSelector">
+                                        <button type="button" class="badge-btn active" data-value="Hotel">Hotel</button>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-submit-ticket">
+                                    <i class="fa-solid fa-ticket"></i> ISSUE STAY PLAN
+                                </button>
+
+                                <div class="barcode">
+                                    <div class="barcode-line w1"></div>
+                                    <div class="barcode-line w3"></div>
+                                    <div class="barcode-line w2"></div>
+                                    <div class="barcode-line w1"></div>
+                                    <div class="barcode-line w4"></div>
+                                    <div class="barcode-line w1"></div>
+                                    <div class="barcode-line w2"></div>
+                                    <div class="barcode-line w3"></div>
+                                    <div class="barcode-line w1"></div>
+                                    <div class="barcode-line w2"></div>
+                                    <div class="barcode-line w4"></div>
+                                </div>
+                                <div class="ticket-meta" id="ticketMetaDisplay">GUESTS: 1 | BUDGET: MID-RANGE | CURR: USD</div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Loading Panel -->
+                <section class="loading-section container hidden" id="loadingPanel">
+                    <div class="glass-card loading-card">
+                        <div class="loader-anim">
+                            <i class="fa-solid fa-plane-departure brand-icon flying"></i>
+                        </div>
+                        <h3>Mapping coordinates and booking options...</h3>
+                        <p class="loader-subtext">Fetching premium hotel listings and neighborhood guides.</p>
+                        
+                        <div class="progress-bar-wrapper">
+                            <div class="progress-bar" id="progressBar" style="width: 100%; animation: loadingPulse 1.5s infinite;"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Error Display -->
+                <section class="error-section container hidden" id="errorPanel">
+                    <div class="error-card">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <h3>Trip Planning Failed</h3>
+                        <p id="errorMessage">There was an issue processing your request. Please check connections.</p>
+                        <button class="btn btn-secondary" onclick="document.getElementById('errorPanel').classList.add('hidden')">Close</button>
+                    </div>
+                </section>
+
+                <!-- Results Section -->
+                <section class="results-section container hidden" id="resultsPanel">
+                    <!-- Title Bar -->
+                    <div class="results-header glass-card">
+                        <div class="title-details">
+                            <span class="tag" id="resTag"><i class="fa-solid fa-passport"></i> Travel Itinerary</span>
+                            <h2 id="resDestination">Paris, France</h2>
+                            <p class="res-dates" id="resDates">Jul 28 - Aug 05 (3 guests)</p>
+                        </div>
+                        <div class="results-actions">
+                            <button class="btn-action" id="bookmarkBtn" title="Add to Favorites">
+                                <i class="fa-regular fa-bookmark"></i>
+                            </button>
+                            <button class="btn-action" id="notesToggleBtn" title="Add Notes">
+                                <i class="fa-regular fa-comment-dots"></i>
+                            </button>
+                            <button class="btn-action export-btn" id="exportBtn" title="Export Itinerary JSON">
+                                <i class="fa-solid fa-file-export"></i>
+                            </button>
+                            <button class="btn-action print-btn" onclick="window.print()" title="Print Itinerary">
+                                <i class="fa-solid fa-print"></i>
+                            </button>
+                            <button class="btn-action delete-plan-btn" id="deletePlanBtn" title="Delete Stay">
+                                <i class="fa-regular fa-trash-can"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Personal Notes Panel -->
+                    <div class="notes-panel glass-card hidden" id="notesPanel">
+                        <div class="notes-header">
+                            <h3><i class="fa-solid fa-feather-pointed"></i> Travel Journal Notes</h3>
+                            <button class="btn btn-small btn-outline" id="saveNotesBtn">Save Journal Entry</button>
+                        </div>
+                        <textarea id="personalNotesInput" placeholder="Write custom notes, packing checklists, or flight booking details for this stay..."></textarea>
+                        
+                        <div class="rating-input-wrapper">
+                            <span>Rate this Stay Itinerary:</span>
+                            <div class="star-rating" id="starRatingInput">
+                                <i class="fa-regular fa-star" data-rating="1"></i>
+                                <i class="fa-regular fa-star" data-rating="2"></i>
+                                <i class="fa-regular fa-star" data-rating="3"></i>
+                                <i class="fa-regular fa-star" data-rating="4"></i>
+                                <i class="fa-regular fa-star" data-rating="5"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Grid -->
+                    <div class="results-grid">
+                        <!-- Neighborhood & Summary -->
+                        <div class="glass-card area-card col-span-2">
+                            <div class="card-icon"><i class="fa-solid fa-city"></i></div>
+                            <h3>Recommended Quarter: <span id="resArea">Montmartre</span></h3>
+                            <p id="resAreaReason" class="area-reason">
+                                Perfect blend of artistic heritage and romance. Excellent cafes and proximity to transit.
+                            </p>
+                        </div>
+
+                        <!-- Weather Forecast Card -->
+                        <div class="glass-card weather-card col-span-1">
+                            <div class="card-icon"><i class="fa-solid fa-cloud-sun"></i></div>
+                            <h3>Destination Climate</h3>
+                            <div class="weather-details" id="weatherDisplay">
+                                <span class="weather-temp">--°C</span>
+                                <span class="weather-cond"><i class="fa-solid fa-sun weather-icon"></i> Sunny</span>
+                            </div>
+                            <p class="weather-note" id="weatherNote">Typical seasonal conditions for this stay.</p>
+                        </div>
+
+                        <!-- Dynamic Budget Calculator Card -->
+                        <div class="glass-card stat-metric cost-calculator-card col-span-1">
+                            <div class="card-icon price-icon"><i class="fa-solid fa-wallet"></i></div>
+                            <h3>Estimated Total Cost</h3>
+                            <p class="metric-value" id="resTotalCost">$1,240</p>
+                            
+                            <!-- Cost Adjustments Slider Drawer -->
+                            <div class="cost-calc-drawer">
+                                <div class="calc-field">
+                                    <label>Dining: <span id="valDining">Regular</span></label>
+                                    <input type="range" id="sliderDining" min="1" max="3" value="2">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Transit: <span id="valTransit">Standard</span></label>
+                                    <input type="range" id="sliderTransit" min="1" max="3" value="2">
+                                </div>
+                                <div class="calc-field">
+                                    <label>Events: <span id="valActivities">Moderate</span></label>
+                                    <input type="range" id="sliderActivities" min="1" max="3" value="2">
+                                </div>
+                            </div>
+
+                            <!-- Currency Converter Widget -->
+                            <div class="currency-converter-widget">
+                                <h4><i class="fa-solid fa-right-left"></i> Currency Converter</h4>
+                                <div class="converter-grid">
+                                    <input type="number" id="convertAmount" value="100" min="1">
+                                    <select id="convertFrom">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="INR">INR (₹)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="THB" selected>THB (฿)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                    </select>
+                                    <span class="convert-arrow"><i class="fa-solid fa-arrow-right-long"></i></span>
+                                    <select id="convertTo">
+                                        <option value="USD">USD ($)</option>
+                                        <option value="INR" selected>INR (₹)</option>
+                                        <option value="EUR">EUR (€)</option>
+                                        <option value="JPY">JPY (¥)</option>
+                                        <option value="THB">THB (฿)</option>
+                                        <option value="GBP">GBP (£)</option>
+                                    </select>
+                                </div>
+                                <div class="convert-result" id="convertResult">
+                                    100 THB = 230 INR
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Left Side: Hotel recommendations -->
+                        <div class="hotels-list-wrapper col-span-3">
+                            <div class="section-subtitle-wrapper">
+                                <h3><i class="fa-solid fa-images"></i> Accommodation Postcards</h3>
+                                <span class="subtitle-desc">Select cards to compare options side-by-side</span>
+                            </div>
+                            <div class="hotels-grid" id="hotelsContainer">
+                                <!-- Hotels load here -->
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Map & Tips -->
+                        <div class="map-and-tips-wrapper col-span-1">
+                            <!-- Map Container -->
+                            <div class="glass-card map-card">
+                                <h3><i class="fa-solid fa-earth-europe"></i> Explorer Map</h3>
+                                <div id="map" class="map-container"></div>
+                                <span class="map-note">Click "Show on Map" on postcards to center focus</span>
+                            </div>
+
+                            <!-- Travel Tips -->
+                            <div class="glass-card tips-card mt-4">
+                                <h3><i class="fa-solid fa-compass"></i> Wayfarer Tips</h3>
+                                <ul class="tips-list" id="tipsContainer">
+                                    <!-- Tips load here -->
+                                </ul>
+                            </div>
+
+                            <!-- Packing Checklist Card -->
+                            <div class="glass-card packing-card mt-4">
+                                <h3><i class="fa-solid fa-shirt"></i> Packing Checklist</h3>
+                                <ul class="packing-list" id="packingContainer">
+                                    <!-- Dynamic checklist items -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comparison Matrix -->
+                    <div class="comparison-matrix-section glass-card col-span-4 mt-4 hidden" id="comparisonSection">
+                        <div class="comparison-header">
+                            <h3><i class="fa-solid fa-arrow-left-right"></i> Comparison Matrix</h3>
+                            <p>Direct side-by-side comparison of selected accommodations</p>
+                        </div>
+                        <div class="comparison-table-wrapper">
+                            <table class="comparison-table" id="comparisonTable">
+                                <!-- Dynamic comparison rows -->
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Analytics Dashboard Modal (Passport Cover style) -->
+    <div class="modal-backdrop hidden" id="statsModal">
+        <div class="glass-card modal-card passport-card">
+            <div class="passport-cover">
+                <div class="passport-crest">
+                    <i class="fa-solid fa-globe"></i>
+                </div>
+                <h3>PASSPORT TO THE WORLD</h3>
+                <p>TRIPVERSE PLANNER HISTORY</p>
+            </div>
+            <div class="passport-page">
+                <div class="modal-header">
+                    <h3><i class="fa-solid fa-passport text-gradient-icon"></i> Passport Stamps</h3>
+                    <button class="close-modal-btn" id="closeStatsBtn"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="modal-body">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <h4 id="statTotalPlanned">0</h4>
+                            <p>Stamps / Trips</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="statBookmarked">0</h4>
+                            <p>Bookmarked</p>
+                        </div>
+                        <div class="stat-card">
+                            <h4 id="statAvgRating">0.0</h4>
+                            <p>Average Score</p>
+                        </div>
+                    </div>
+
+                    <div class="stats-destinations mt-4">
+                        <h4><i class="fa-solid fa-compass"></i> Frequent Destinations</h4>
+                        <ul class="popular-list" id="popularDestinationsList">
+                            <li class="empty-list">No trips planned yet.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS for Map -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <!-- Custom Application Javascript -->
+    <script src="/static/app.js?v=2.0.2"></script>
+</body>
+</html>
