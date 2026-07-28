@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Move Agent — Smart Travel Planner</title>
+  <link rel="stylesheet" href="/static/css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-overlay"></div>
+  <nav class="navbar">
+    <div class="logo">MoveAgent</div>
+    <ul>
+      <li><a href="#planner">Plan Trip</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#destinations">Destinations</a></li>
+    </ul>
+  </nav>
+  <div class="hero-content">
+    <span class="badge">AI-Powered Route Intelligence</span>
+    <h1>Travel Smarter.<br/>Arrive Better.</h1>
+    <p>Real-time transport scoring across trains, buses, flights & more — personalized to your budget, time, and style.</p>
+    <a href="#planner" class="btn-primary">Plan My Journey</a>
+  </div>
+  <div class="hero-scroll">↓ Scroll to explore</div>
+</header>
+
+<!-- STATS BAR -->
+<section class="stats-bar">
+  <div class="stat"><span>8+</span><p>Transport Modes</p></div>
+  <div class="stat"><span>Live</span><p>Weather & Traffic</p></div>
+  <div class="stat"><span>AI</span><p>Route Scoring</p></div>
+  <div class="stat"><span>Free</span><p>Open APIs</p></div>
+</section>
+
+<!-- PLANNER FORM -->
+<section class="planner-section" id="planner">
+  <div class="section-header">
+    <h2>Plan Your Journey</h2>
+    <p>Enter your trip details and let our AI find the best route for you</p>
+  </div>
+  <div class="planner-card">
+    <form id="planForm">
+      <div class="form-grid">
+        <div class="form-group">
+          <label>From</label>
+          <input type="text" id="source" placeholder="e.g. Tokyo" required/>
+        </div>
+        <div class="form-group">
+          <label>To</label>
+          <input type="text" id="destination" placeholder="e.g. Mount Fuji" required/>
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" id="date" required/>
+        </div>
+        <div class="form-group">
+          <label>Departure Time</label>
+          <input type="time" id="time" value="08:30" required/>
+        </div>
+        <div class="form-group">
+          <label>Budget (USD)</label>
+          <input type="number" id="budget" placeholder="e.g. 3000" min="1" required/>
+        </div>
+        <div class="form-group">
+          <label>Group Size</label>
+          <input type="number" id="group_size" value="2" min="1" max="20" required/>
+        </div>
+      </div>
+      <div class="preference-row">
+        <label>Travel Preference</label>
+        <div class="pref-options">
+          <label class="pref-chip active"><input type="radio" name="preference" value="fastest" checked/> Fastest</label>
+          <label class="pref-chip"><input type="radio" name="preference" value="cheapest"/> Cheapest</label>
+          <label class="pref-chip"><input type="radio" name="preference" value="comfort"/> Comfort</label>
+          <label class="pref-chip"><input type="radio" name="preference" value="eco"/> Eco-Friendly</label>
+          <label class="pref-chip"><input type="radio" name="preference" value="scenic"/> Scenic</label>
+        </div>
+      </div>
+      <button type="submit" class="btn-search" id="searchBtn">
+        <span id="btnText">Find Best Routes</span>
+        <span id="btnLoader" style="display:none">Analyzing routes...</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="results-section" id="results" style="display:none">
+  <div class="section-header">
+    <h2>Route Recommendations</h2>
+    <p id="routeSubtitle"></p>
+  </div>
+
+  <!-- Conditions Bar -->
+  <div class="conditions-bar" id="conditionsBar"></div>
+
+  <!-- Best Route Card -->
+  <div class="best-route-card" id="bestRoute"></div>
+
+  <!-- All Options -->
+  <div class="section-header" style="margin-top:3rem">
+    <h3>All Available Routes</h3>
+  </div>
+  <div class="options-grid" id="optionsGrid"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-header">
+    <h2>How Move Agent Works</h2>
+    <p>9 intelligent steps from request to recommendation</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card"><div class="step-num">01</div><h4>Receive Request</h4><p>Source, destination, budget, group size & preference</p></div>
+    <div class="step-card"><div class="step-num">02</div><h4>Geocode Locations</h4><p>Convert city names to precise lat/lon coordinates via Nominatim</p></div>
+    <div class="step-card"><div class="step-num">03</div><h4>Fetch Transport</h4><p>Query all modes: walk, bike, bus, metro, train, taxi, car, flight</p></div>
+    <div class="step-card"><div class="step-num">04</div><h4>Live Conditions</h4><p>Real-time weather via OpenWeatherMap & traffic analysis</p></div>
+    <div class="step-card"><div class="step-num">05</div><h4>Filter Invalid</h4><p>Remove routes exceeding budget, blocked by weather or capacity</p></div>
+    <div class="step-card"><div class="step-num">06</div><h4>AI Scoring</h4><p>Weighted scoring: time, cost, transfers, traffic, preference</p></div>
+    <div class="step-card"><div class="step-num">07</div><h4>Rank Routes</h4><p>Sort all options by composite score descending</p></div>
+    <div class="step-card"><div class="step-num">08</div><h4>Explain Choice</h4><p>Generate transparent reasons for the top recommendation</p></div>
+    <div class="step-card"><div class="step-num">09</div><h4>Return Result</h4><p>Structured response with arrival time, cost & full breakdown</p></div>
+  </div>
+</section>
+
+<!-- DESTINATIONS SHOWCASE -->
+<section class="destinations-section" id="destinations">
+  <div class="section-header">
+    <h2>Popular Routes</h2>
+    <p>Explore some of the world's most traveled journeys</p>
+  </div>
+  <div class="dest-grid">
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=600&q=80')">
+      <div class="dest-overlay"><h3>Tokyo → Mount Fuji</h3><p>Japan • 100 km</p><button class="dest-btn" onclick="fillRoute('Tokyo','Mount Fuji')">Plan This Route</button></div>
+    </div>
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80')">
+      <div class="dest-overlay"><h3>Paris → Lyon</h3><p>France • 465 km</p><button class="dest-btn" onclick="fillRoute('Paris','Lyon')">Plan This Route</button></div>
+    </div>
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80')">
+      <div class="dest-overlay"><h3>London → Edinburgh</h3><p>UK • 534 km</p><button class="dest-btn" onclick="fillRoute('London','Edinburgh')">Plan This Route</button></div>
+    </div>
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=600&q=80')">
+      <div class="dest-overlay"><h3>Mumbai → Goa</h3><p>India • 590 km</p><button class="dest-btn" onclick="fillRoute('Mumbai','Goa')">Plan This Route</button></div>
+    </div>
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1534430480872-3498386e7856?w=600&q=80')">
+      <div class="dest-overlay"><h3>New York → Boston</h3><p>USA • 346 km</p><button class="dest-btn" onclick="fillRoute('New York','Boston')">Plan This Route</button></div>
+    </div>
+    <div class="dest-card" style="background-image:url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?w=600&q=80')">
+      <div class="dest-overlay"><h3>Sydney → Melbourne</h3><p>Australia • 878 km</p><button class="dest-btn" onclick="fillRoute('Sydney','Melbourne')">Plan This Route</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo">MoveAgent</div>
+      <p>AI-powered travel routing for the modern explorer.</p>
+    </div>
+    <div class="footer-links">
+      <h4>APIs Used</h4>
+      <ul>
+        <li>OpenStreetMap Nominatim</li>
+        <li>OpenRouteService</li>
+        <li>OpenWeatherMap</li>
+        <li>Geoapify</li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Transport Modes</h4>
+      <ul>
+        <li>Walking · Bike · Bus</li>
+        <li>Metro · Train · Taxi</li>
+        <li>Rental Car · Flight</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 MoveAgent. Built with FastAPI & OpenStreetMap.</div>
+</footer>
+
+<script src="/static/js/main.js"></script>
+</body>
+</html>
