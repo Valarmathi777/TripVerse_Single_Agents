@@ -1,0 +1,134 @@
+destination,attraction_name,entry_fee,type,recommended_hours
+Ooty,Ooty Lake Boating,150,paid,2
+Ooty,Botanical Garden,50,paid,2
+Ooty,Doddabetta Peak,20,paid,1
+Ooty,Rose Garden,30,paid,1
+Ooty,Ooty Market Walk,0,free,2
+Goa,Basilica of Bom Jesus,0,free,1
+Goa,Fort Aguada,25,paid,2
+Goa,Dudhsagar Falls Trek,400,paid,4
+Goa,Anjuna Flea Market,0,free,2
+Goa,Calangute Beach,0,free,3
+Manali,Solang Valley,300,paid,3
+Manali,Hadimba Temple,0,free,1
+Manali,Rohtang Pass Permit,600,paid,5
+Manali,Old Manali Cafes Walk,0,free,2
+Jaipur,Amber Fort,200,paid,3
+Jaipur,City Palace,300,paid,2
+Jaipur,Hawa Mahal,100,paid,1
+Jaipur,Jantar Mantar,100,paid,1
+Jaipur,Johari Bazaar Walk,0,free,2
+Munnar,Eravikulam National Park,150,paid,2
+Munnar,Mattupetty Dam,50,paid,1
+Munnar,Tea Museum,100,paid,1
+Munnar,Top Station View,20,paid,1
+Coorg,Abbey Falls,20,paid,1
+Coorg,Raja's Seat,15,paid,1
+Coorg,Dubare Elephant Camp,250,paid,3
+Coorg,Namdroling Monastery,0,free,1
+Rishikesh,Laxman Jhula,0,free,1
+Rishikesh,Ram Jhula,0,free,1
+Rishikesh,Ganga Aarti Triveni Ghat,0,free,2
+Rishikesh,Rafting Experience,600,paid,3
+Pondicherry,Auroville,0,free,3
+Pondicherry,Promenade Beach,0,free,2
+Pondicherry,French Quarter Walk,0,free,2
+Pondicherry,Paradise Beach Boat Ride,150,paid,2
+Udaipur,City Palace Udaipur,300,paid,3
+Udaipur,Lake Pichola Boat Ride,400,paid,1
+Udaipur,Jag Mandir,150,paid,1
+Udaipur,Saheliyon ki Bari,50,paid,1
+Darjeeling,Tiger Hill Sunrise,150,paid,2
+Darjeeling,Darjeeling Himalayan Railway,300,paid,2
+Darjeeling,Padmaja Naidu Zoo,100,paid,2
+Darjeeling,Tea Garden Walk,0,free,2
+Paris,Eiffel Tower (Summit Elevator),2631.3,paid,3.0
+Paris,Louvre Museum,1969.0,paid,4.0
+Paris,Sacré-Cœur Basilica,0.0,free,2.0
+Paris,Jardin du Luxembourg,0.0,free,2.0
+Paris,Palace of Versailles,1879.5,paid,5.0
+Tokyo,Senso-ji Temple,0.0,free,2.0
+Tokyo,Meiji Jingu Shrine,0.0,free,1.0
+Tokyo,Tokyo Tower Main Deck,660.0,paid,2.0
+Tokyo,Tokyo Skytree,1485.0,paid,2.0
+Tokyo,teamLab Planets Tokyo,2090.0,paid,3.0
+London,The British Museum,0.0,free,3.0
+London,Tower of London,3706.2,paid,3.0
+London,The London Eye,4047.0,paid,1.5
+London,The National Gallery,0.0,free,2.5
+London,Westminster Abbey,3088.5,paid,2.0
+London,Natural History Museum,0.0,free,3.0
+New York,Central Park,0.0,free,3.0
+New York,The High Line,0.0,free,2.0
+New York,Empire State Building Observatory,3674.0,paid,2.0
+New York,The Metropolitan Museum of Art (The Met),2505.0,paid,4.0
+New York,Statue of Liberty & Ellis Island Ferry,2087.5,paid,4.0
+New York,Top of the Rock Observation Deck,3340.0,paid,2.0
+Sydney,Sydney Opera House Tour,2356.4,paid,2.0
+Sydney,Bondi to Coogee Coastal Walk,0.0,free,3.0
+Sydney,Taronga Zoo Sydney,2794.8,paid,4.0
+Sydney,Royal Botanic Garden Sydney,0.0,free,2.0
+Sydney,SEA LIFE Sydney Aquarium,2630.4,paid,3.0
+Dubai,Burj Khalifa (At The Top),4063.3,paid,2.0
+Dubai,Dubai Mall & Dubai Fountain Show,0.0,free,3.0
+Dubai,Museum of the Future,3382.3,paid,2.0
+Dubai,Dubai Frame,1180.4,paid,2.0
+Dubai,Jumeirah Public Beach,0.0,free,3.0
+Cape Town,Table Mountain Aerial Cableway,1932.0,paid,3.0
+Cape Town,Robben Island Museum Tour,2760.0,paid,4.0
+Cape Town,Kirstenbosch National Botanical Garden,1012.0,paid,3.0
+Cape Town,Boulders Beach Penguin Colony,874.0,paid,2.0
+Cape Town,Victoria & Alfred Waterfront,0.0,free,3.0
+Cape Town,Lion's Head Summit Hike,0.0,free,3.0
+Rio De Janeiro,Christ the Redeemer (Corcovado Train),1786.0,paid,3.0
+Rio De Janeiro,Sugarloaf Mountain Cable Car,2432.0,paid,3.0
+Rio De Janeiro,Escadaria Selarón,0.0,free,1.0
+Rio De Janeiro,Copacabana Beach,0.0,free,4.0
+Rio De Janeiro,Rio de Janeiro Botanical Garden,1109.6,paid,2.0
+Rio De Janeiro,Museum of Tomorrow,456.0,paid,2.0
+Cairo,Giza Plateau & Great Pyramids,928.8,paid,4.0
+Cairo,The Egyptian Museum in Tahrir Square,774.0,paid,3.0
+Cairo,Khan El-Khalili Bazaar,0.0,free,3.0
+Cairo,Citadel of Saladin & Mosque of Muhammad Ali,774.0,paid,2.0
+Cairo,Coptic Cairo & Hanging Church,0.0,free,2.0
+Cairo,Al-Azhar Park,103.2,paid,2.0
+Singapore,Gardens by the Bay (Flower Dome & Cloud Forest),3312.5,paid,3.0
+Singapore,Merlion Park,0.0,free,1.0
+Singapore,Universal Studios Singapore,5187.5,paid,6.0
+Singapore,Jewel Changi Airport Rain Vortex,0.0,free,2.0
+Singapore,Singapore Zoo,3000.0,paid,4.0
+Singapore,Marina Bay Sands SkyPark Observation Deck,2000.0,paid,2.0
+Bangkok,The Grand Palace & Emerald Buddha Temple,1175.0,paid,3.0
+Bangkok,Wat Pho (Temple of the Reclining Buddha),705.0,paid,2.0
+Bangkok,Wat Arun (Temple of Dawn),235.0,paid,1.5
+Bangkok,Chatuchak Weekend Market,0.0,free,4.0
+Bangkok,Lumpini Park,0.0,free,2.0
+Bangkok,Jim Thompson House Museum,470.0,paid,2.0
+Rome,Colosseum & Roman Forum,1620.0,paid,3.0
+Rome,Vatican Museums & Sistine Chapel,1800.0,paid,4.0
+Rome,Pantheon,450.0,paid,1.0
+Rome,Trevi Fountain,0.0,free,1.0
+Rome,Piazza Navona,0.0,free,1.0
+Rome,Villa Borghese Gardens,0.0,free,2.0
+Mumbai,Gateway of India,0.0,free,1.0
+Mumbai,Marine Drive,0.0,free,2.0
+Mumbai,Chhatrapati Shivaji Maharaj Vastu Sangrahalaya,150.0,paid,3.0
+Mumbai,Elephanta Caves,600.0,paid,4.0
+Mumbai,Sanjay Gandhi National Park,85.0,paid,3.0
+Delhi,India Gate,0.0,free,1.0
+Delhi,Lotus Temple,0.0,free,2.0
+Delhi,Red Fort,50.0,paid,3.0
+Delhi,Qutub Minar,40.0,paid,2.0
+Delhi,Humayun's Tomb,40.0,paid,2.0
+Delhi,Swaminarayan Akshardham,0.0,free,4.0
+Bengaluru,Bangalore Palace,240.0,paid,2.0
+Bengaluru,Lalbagh Botanical Garden,30.0,paid,2.0
+Bengaluru,Cubbon Park,0.0,free,2.0
+Bengaluru,ISKCON Temple Bengaluru,0.0,free,2.0
+Bengaluru,Visvesvaraya Industrial and Technological Museum,85.0,paid,3.0
+Srinagar,Dal Lake Shikara Ride,700.0,paid,2.0
+Srinagar,Shalimar Bagh Mughal Garden,25.0,paid,2.0
+Srinagar,Nishat Bagh,25.0,paid,2.0
+Srinagar,Shankaracharya Temple,0.0,free,1.0
+Srinagar,Hazratbal Shrine,0.0,free,1.0
+Srinagar,Pari Mahal,25.0,paid,2.0

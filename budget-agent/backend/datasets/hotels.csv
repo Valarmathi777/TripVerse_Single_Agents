@@ -1,0 +1,157 @@
+destination,hotel_name,category,price_per_night,rating,max_occupancy
+Ooty,Sterling Ooty Fern Hill,Luxury,9500,4.6,2
+Ooty,Taj Savoy Ooty,Luxury,11000,4.7,2
+Ooty,Hotel Nahar Heritage,Standard,4200,4.0,3
+Ooty,Willow Hill Residency,Standard,3600,3.9,2
+Ooty,Ooty Backpackers Inn,Budget,1400,3.6,3
+Ooty,Green Valley Guest House,Budget,1100,3.4,2
+Goa,W Goa Vagator,Luxury,15000,4.8,2
+Goa,Taj Fort Aguada,Luxury,13500,4.7,2
+Goa,Baga Beach Resort,Standard,5200,4.1,3
+Goa,Calangute Comfort Stay,Standard,4000,3.9,2
+Goa,Zostel Goa,Budget,900,4.2,4
+Goa,Anjuna Budget Rooms,Budget,1200,3.5,2
+Manali,The Himalayan,Luxury,10500,4.6,2
+Manali,Snow Valley Resorts,Luxury,9800,4.5,2
+Manali,Apple Country Resort,Standard,4500,4.0,3
+Manali,Mall Road Residency,Standard,3800,3.8,2
+Manali,Old Manali Hostel,Budget,800,4.1,4
+Manali,Riverside Budget Stay,Budget,1300,3.6,2
+Jaipur,Rambagh Palace,Luxury,22000,4.9,2
+Jaipur,ITC Rajputana,Luxury,12000,4.6,2
+Jaipur,Pearl Palace Heritage,Standard,4800,4.2,3
+Jaipur,Hawa Mahal View Rooms,Standard,3500,3.9,2
+Jaipur,Zostel Jaipur,Budget,950,4.0,4
+Jaipur,Pink City Budget Inn,Budget,1100,3.5,2
+Munnar,Windermere Estate,Luxury,11500,4.7,2
+Munnar,Tea County Munnar,Luxury,9200,4.4,2
+Munnar,Misty Mountain Resort,Standard,4600,4.1,3
+Munnar,Green Meadows Homestay,Standard,3200,4.0,2
+Munnar,Munnar Backpackers,Budget,1000,3.9,3
+Munnar,Cardamom Hill Guesthouse,Budget,1250,3.6,2
+Coorg,Vivanta Coorg,Luxury,10800,4.6,2
+Coorg,Orange County Coorg,Luxury,13800,4.8,2
+Coorg,Coffee Estate Homestay,Standard,4300,4.3,3
+Coorg,Madikeri Comfort Inn,Standard,3400,3.8,2
+Coorg,Coorg Hostel Bunks,Budget,900,4.0,4
+Coorg,Budget Homestay Coorg,Budget,1150,3.5,2
+Rishikesh,Ananda in the Himalayas,Luxury,18000,4.9,2
+Rishikesh,Aloha on the Ganges,Luxury,8500,4.5,2
+Rishikesh,Ganga View Standard Rooms,Standard,3600,3.9,2
+Rishikesh,Laxman Jhula Comfort Stay,Standard,3000,3.8,3
+Rishikesh,Zostel Rishikesh,Budget,700,4.3,4
+Rishikesh,Riverside Budget Camp,Budget,1000,3.7,2
+Pondicherry,Palais de Mahe,Luxury,9800,4.6,2
+Pondicherry,Le Dupleix,Luxury,8600,4.5,2
+Pondicherry,French Quarter Residency,Standard,4000,4.1,3
+Pondicherry,White Town Comfort Rooms,Standard,3200,3.9,2
+Pondicherry,Backpacker Panda Pondy,Budget,850,4.0,4
+Pondicherry,Auroville Budget Stay,Budget,1050,3.6,2
+Udaipur,Taj Lake Palace,Luxury,28000,4.9,2
+Udaipur,The Oberoi Udaivilas,Luxury,32000,5.0,2
+Udaipur,Lake Pichola View Rooms,Standard,4900,4.2,3
+Udaipur,City Palace Comfort Stay,Standard,3900,3.9,2
+Udaipur,Zostel Udaipur,Budget,1000,4.1,4
+Udaipur,Lake City Budget Inn,Budget,1200,3.5,2
+Darjeeling,Mayfair Darjeeling,Luxury,10200,4.7,2
+Darjeeling,Windamere Hotel,Luxury,9500,4.5,2
+Darjeeling,Tea Garden Retreat,Standard,4100,4.0,3
+Darjeeling,Mall Road Standard Stay,Standard,3300,3.8,2
+Darjeeling,Darjeeling Hostel Hub,Budget,950,3.9,4
+Darjeeling,Hill View Budget Rooms,Budget,1150,3.6,2
+Paris,St Christopher's Inn Canal,Budget,3580.0,4.1,2
+Paris,Generator Paris,Budget,4922.5,4.2,2
+Paris,Hôtel Malte - Astotel,Standard,16557.5,4.6,2
+Paris,Novotel Paris Les Halles,Standard,20585.0,4.4,2
+Paris,The Ritz Paris,Luxury,125300.0,4.8,2
+Paris,Le Meurice,Luxury,111875.0,4.7,2
+Tokyo,Nine Hours Shinjuku,Budget,2640.0,4.1,1
+Tokyo,Khaosan Tokyo Kabuki Hostel,Budget,2145.0,4.0,1
+Tokyo,Hotel Gracery Shinjuku,Standard,10175.0,4.4,2
+Tokyo,Tobu Hotel Levant Tokyo,Standard,8800.0,4.3,2
+Tokyo,"The Ritz-Carlton, Tokyo",Luxury,68750.0,4.8,2
+Tokyo,Aman Tokyo,Luxury,99000.0,4.9,2
+London,Generator Hostel London,Budget,4047.0,4.1,2
+London,Point A Hotel Kings Cross,Budget,9052.5,4.3,2
+London,CitizenM Tower of London,Standard,17572.5,4.5,2
+London,Novotel London Waterloo,Standard,19702.5,4.3,2
+London,The Ritz London,Luxury,79875.0,4.8,2
+London,The Savoy,Luxury,87330.0,4.7,2
+New York,HI NYC Hostel,Budget,5427.5,4.3,1
+New York,Pod 51 Hotel,Budget,10437.5,4.1,2
+New York,Millennium Hotel Broadway Times Square,Standard,19205.0,4.0,2
+New York,Arlo Midtown,Standard,23380.0,4.4,2
+New York,The Plaza Hotel,Luxury,79325.0,4.6,2
+New York,"The Ritz-Carlton New York, Central Park",Luxury,104375.0,4.7,2
+Sydney,Wake Up! Sydney Central Hostel,Budget,6028.0,4.5,2
+Sydney,Sydney Harbour YHA,Budget,7398.0,4.6,2
+Sydney,Novotel Sydney Darling Harbour,Standard,13700.0,4.3,2
+Sydney,Rydges World Square Sydney,Standard,12056.0,4.2,2
+Sydney,Park Hyatt Sydney,Luxury,63020.0,4.8,2
+Sydney,Crown Towers Sydney,Luxury,48224.0,4.7,2
+Dubai,Premier Inn Dubai Ibn Battuta,Budget,4086.0,4.2,2
+Dubai,Rove City Centre,Budget,5221.0,4.4,2
+Dubai,Novotel Dubai Al Barsha,Standard,10215.0,4.3,2
+Dubai,Hilton Dubai Jumeirah,Standard,15436.0,4.5,2
+Dubai,"Atlantis, The Palm",Luxury,49940.0,4.7,2
+Dubai,Burj Al Arab Jumeirah,Luxury,124850.0,4.9,2
+Cape Town,Atlantic Point Backpackers,Budget,3450.0,4.5,2
+Cape Town,Mojo Hotel & Market,Budget,4370.0,4.1,2
+Cape Town,Radisson RED Hotel V&A Waterfront,Standard,12880.0,4.6,2
+Cape Town,The Peninsula All-Suite Hotel,Standard,10580.0,4.4,2
+Cape Town,The Silo Hotel,Luxury,85100.0,4.9,2
+Cape Town,One&Only Cape Town,Luxury,65320.0,4.8,2
+Rio De Janeiro,Selina Copacabana,Budget,3344.0,4.3,2
+Rio De Janeiro,Ipanema Beach House,Budget,2736.0,4.1,2
+Rio De Janeiro,Arena Leme Hotel,Standard,9880.0,4.5,2
+Rio De Janeiro,Windsor California Hotel,Standard,11856.0,4.6,2
+Rio De Janeiro,"Copacabana Palace, A Belmond Hotel",Luxury,48640.0,4.8,2
+Rio De Janeiro,Hotel Fasano Rio de Janeiro,Luxury,57760.0,4.7,2
+Cairo,Dahab Hostel,Budget,774.0,4.1,2
+Cairo,Holy Sheet Hostel,Budget,1118.0,4.6,2
+Cairo,Pyramids Valley Boutique Hotel,Standard,4816.0,4.3,2
+Cairo,Steigenberger Hotel El Tahrir,Standard,6536.0,4.5,2
+Cairo,Marriott Mena House Cairo,Luxury,24080.0,4.7,2
+Cairo,Four Seasons Hotel Cairo at Nile Plaza,Luxury,30960.0,4.8,2
+Singapore,Hotel 81 Dickson,Budget,5937.5,3.8,2
+Singapore,ibis budget Singapore Clarke Quay,Budget,7812.5,4.0,2
+Singapore,JEN Singapore Orchardgateway by Shangri-La,Standard,16250.0,4.4,2
+Singapore,Parkroyal on Beach Road,Standard,18125.0,4.3,2
+Singapore,Marina Bay Sands,Luxury,59375.0,4.7,3
+Singapore,The Fullerton Hotel Singapore,Luxury,38750.0,4.6,2
+Bangkok,Lub d Bangkok Siam,Budget,1762.5,4.4,2
+Bangkok,Bed Station Hostel Ratchthewi,Budget,1527.5,4.5,2
+Bangkok,ibis Styles Bangkok Sukhumvit 4,Standard,4935.0,4.2,2
+Bangkok,Amari Bangkok,Standard,8930.0,4.5,2
+Bangkok,Mandarin Oriental Bangkok,Luxury,49350.0,4.8,2
+Bangkok,Capella Bangkok,Luxury,56400.0,4.9,2
+Rome,The Beehive Hostel,Budget,4050.0,4.3,2
+Rome,YellowSquare Rome,Budget,4950.0,4.4,2
+Rome,iQ Hotel Roma,Standard,16200.0,4.6,2
+Rome,Hotel Artemide,Standard,18900.0,4.7,2
+Rome,Hotel Eden - Dorchester Collection,Luxury,76500.0,4.8,2
+Rome,The St. Regis Rome,Luxury,85500.0,4.9,2
+Mumbai,Zostel Mumbai,Budget,1800.0,4.3,2
+Mumbai,Hotel Suba Palace,Budget,4200.0,4.1,2
+Mumbai,Residency Hotel Fort,Standard,7500.0,4.4,2
+Mumbai,Trident Bandra Kurla,Standard,13500.0,4.6,2
+Mumbai,The Taj Mahal Palace,Luxury,28000.0,4.8,2
+Mumbai,The St. Regis Mumbai,Luxury,22000.0,4.7,2
+Delhi,Zostel Delhi,Budget,1200.0,4.5,2
+Delhi,Bloomrooms @ Janpath,Budget,3500.0,4.3,2
+Delhi,"Vivanta New Delhi, Dwarka",Standard,7500.0,4.4,2
+Delhi,The Claridges New Delhi,Standard,11000.0,4.6,2
+Delhi,The Leela Palace New Delhi,Luxury,24000.0,4.8,2
+Delhi,"The Taj Mahal Hotel, New Delhi",Luxury,21000.0,4.7,2
+Bengaluru,Zostel Bengaluru (Indiranagar),Budget,1200.0,4.5,2
+Bengaluru,Treebo Trend Trendsuites,Budget,2200.0,4.1,2
+Bengaluru,"Lemon Tree Premier, Ulsoor Lake",Standard,5500.0,4.3,2
+Bengaluru,ibis Bengaluru City Centre,Standard,4800.0,4.2,2
+Bengaluru,The Leela Palace Bengaluru,Luxury,18000.0,4.8,2
+Bengaluru,"ITC Gardenia, a Luxury Collection Hotel",Luxury,15000.0,4.7,2
+Srinagar,Hotel Jahangir,Budget,1800.0,4.0,2
+Srinagar,Hotel Akbar Residency,Budget,2200.0,4.1,2
+Srinagar,Fortune Resort Heevan,Standard,6500.0,4.4,2
+Srinagar,Hotel Sarovar Portico Srinagar,Standard,7200.0,4.3,2
+Srinagar,The Lalit Grand Palace Srinagar,Luxury,24000.0,4.7,2
+Srinagar,Vivanta Dal View,Luxury,19500.0,4.6,2

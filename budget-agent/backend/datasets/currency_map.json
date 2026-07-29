@@ -1,0 +1,82 @@
+{
+  "Paris": {
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "rate_to_inr": 89.5
+  },
+  "Tokyo": {
+    "currency_code": "JPY",
+    "currency_symbol": "¥",
+    "rate_to_inr": 0.55
+  },
+  "London": {
+    "currency_code": "GBP",
+    "currency_symbol": "£",
+    "rate_to_inr": 106.5
+  },
+  "New York": {
+    "currency_code": "USD",
+    "currency_symbol": "$",
+    "rate_to_inr": 83.5
+  },
+  "Sydney": {
+    "currency_code": "AUD",
+    "currency_symbol": "$",
+    "rate_to_inr": 54.8
+  },
+  "Dubai": {
+    "currency_code": "AED",
+    "currency_symbol": "AED",
+    "rate_to_inr": 22.7
+  },
+  "Cape Town": {
+    "currency_code": "ZAR",
+    "currency_symbol": "R",
+    "rate_to_inr": 4.6
+  },
+  "Rio De Janeiro": {
+    "currency_code": "BRL",
+    "currency_symbol": "R$",
+    "rate_to_inr": 15.2
+  },
+  "Cairo": {
+    "currency_code": "EGP",
+    "currency_symbol": "E£",
+    "rate_to_inr": 1.72
+  },
+  "Singapore": {
+    "currency_code": "SGD",
+    "currency_symbol": "S$",
+    "rate_to_inr": 62.5
+  },
+  "Bangkok": {
+    "currency_code": "THB",
+    "currency_symbol": "฿",
+    "rate_to_inr": 2.35
+  },
+  "Rome": {
+    "currency_code": "EUR",
+    "currency_symbol": "€",
+    "rate_to_inr": 90.0
+  },
+  "Mumbai": {
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "rate_to_inr": 1.0
+  },
+  "Delhi": {
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "rate_to_inr": 1.0
+  },
+  "Bengaluru": {
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "rate_to_inr": 1.0
+  },
+  "Srinagar": {
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "rate_to_inr": 1.0
+  }
+}

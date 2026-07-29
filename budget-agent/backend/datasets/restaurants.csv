@@ -1,0 +1,141 @@
+destination,restaurant_name,category,cuisine,avg_price_per_person,meal_type
+Ooty,Earl's Secret,Luxury,Continental,900,dinner
+Ooty,Chandan Vegetarian,Standard,South Indian,350,lunch
+Ooty,Hot Chocolate Corner,Standard,Cafe,300,snacks
+Ooty,Local Idli Stall,Budget,South Indian,120,breakfast
+Ooty,Blue Hills Dhaba,Budget,North Indian,180,lunch
+Goa,Gunpowder Assagao,Luxury,Goan,1200,dinner
+Goa,Fisherman's Wharf,Luxury,Seafood,1400,dinner
+Goa,Britto's Beach Shack,Standard,Goan,600,lunch
+Goa,Baba Au Rhum,Standard,Cafe,450,breakfast
+Goa,Beach Shack Budget Thali,Budget,Goan,200,lunch
+Goa,Street Food Stall Anjuna,Budget,Street Food,150,snacks
+Manali,Johnson's Cafe,Luxury,Continental,850,dinner
+Manali,Chopsticks Restaurant,Standard,Chinese,500,dinner
+Manali,Mall Road Momos,Budget,Tibetan,150,snacks
+Manali,Local Dhaba Manali,Budget,North Indian,180,lunch
+Jaipur,Suvarna Mahal,Luxury,Rajasthani,1600,dinner
+Jaipur,1135 AD,Luxury,Royal Rajasthani,1800,dinner
+Jaipur,Laxmi Misthan Bhandar,Standard,Rajasthani,400,lunch
+Jaipur,Rawat Kachori,Budget,Street Food,100,snacks
+Jaipur,Local Thali House,Budget,Rajasthani,180,lunch
+Munnar,Saravana Bhavan Munnar,Standard,South Indian,350,lunch
+Munnar,Tea Estate Fine Dine,Luxury,Continental,950,dinner
+Munnar,Spice Garden Cafe,Standard,Kerala,400,dinner
+Munnar,Local Kerala Meals,Budget,Kerala,150,lunch
+Coorg,Coorg Cuisine Court,Standard,Coorgi,450,dinner
+Coorg,Plantation Trail Fine Dine,Luxury,Continental,1100,dinner
+Coorg,Local Pandi Curry Stall,Budget,Coorgi,180,lunch
+Rishikesh,Ganga Beach Cafe,Standard,Multi-cuisine,400,dinner
+Rishikesh,Chotiwala,Standard,North Indian,350,lunch
+Rishikesh,German Bakery,Budget,Cafe,150,breakfast
+Rishikesh,Ashram Free Meal Kitchen,Budget,Satvik,80,lunch
+Pondicherry,Villa Shanti,Luxury,French,1300,dinner
+Pondicherry,Cafe des Arts,Standard,French Cafe,500,breakfast
+Pondicherry,Surguru Restaurant,Budget,South Indian,150,lunch
+Udaipur,Ambrai Restaurant,Luxury,Rajasthani,1400,dinner
+Udaipur,Upre by 1559 AD,Luxury,Rajasthani,1600,dinner
+Udaipur,Millets of Mewar,Standard,Rajasthani,400,lunch
+Udaipur,Local Street Thali,Budget,Rajasthani,160,lunch
+Darjeeling,Glenary's,Luxury,Continental,900,dinner
+Darjeeling,Kunga Restaurant,Standard,Tibetan,350,dinner
+Darjeeling,Momo Corner,Budget,Tibetan,120,snacks
+Paris,Du Pain et des Idées,Budget,French Bakery,760.75,breakfast
+Paris,L'As du Fallafel,Budget,Middle Eastern Street Food,1074.0,lunch
+Paris,Bouillon Chartier,Standard,Classic French Bistro,1969.0,dinner
+Paris,Café de Flore,Standard,French Café & Snacks,3132.5,snacks
+Paris,Le Jules Verne,Luxury,Modern French Fine Dining,22822.5,dinner
+Paris,Plaza Athénée - Jean Imbert,Luxury,Haute Cuisine,28640.0,dinner
+Tokyo,Yoshinoya Shibuya,Budget,Japanese Beef Bowl,374.0,breakfast
+Tokyo,Ichiran Ramen Shinjuku,Budget,Ramen,605.0,lunch
+Tokyo,Harbs Roppongi Hills,Standard,Japanese Cafe & Cakes,1210.0,snacks
+Tokyo,Torikizoku Ginza,Standard,Yakitori / Izakaya,1925.0,dinner
+Tokyo,Narisawa,Luxury,Innovative Fine Dining,20900.0,dinner
+Tokyo,Sukiyabashi Jiro,Luxury,Traditional Sushi,24750.0,dinner
+London,Beigel Bake Brick Lane,Budget,Bakery & Jewish Deli,798.75,snacks
+London,Dishoom King's Cross,Budget,Indian Street Food,1917.0,breakfast
+London,Flat Iron Soho,Standard,Steakhouse,3408.0,lunch
+London,Padella Borough Market,Standard,Italian,2982.0,dinner
+London,Restaurant Gordon Ramsay,Luxury,French Fine Dining,22365.0,dinner
+London,The Ledbury,Luxury,Modern British,20767.5,lunch
+New York,Absolute Bagels,Budget,American / Bakery,668.0,breakfast
+New York,Joe's Pizza,Budget,Italian / Pizza,1002.0,snacks
+New York,Los Tacos No. 1,Budget,Mexican,1336.0,lunch
+New York,Clinton St. Baking Company,Standard,American / Diner,2338.0,breakfast
+New York,Katz's Delicatessen,Standard,Jewish Deli,2922.5,lunch
+New York,Carmine's Italian Restaurant,Standard,Italian,4592.5,dinner
+New York,Le Bernardin,Luxury,French / Seafood,17535.0,dinner
+New York,Eleven Madison Park,Luxury,Fine Dining / Plant-Based,30477.5,dinner
+Sydney,Bourke Street Bakery,Budget,Bakery & Cafe,986.4,breakfast
+Sydney,Harry's Cafe de Wheels,Budget,Australian Fast Food,822.0,snacks
+Sydney,The Grounds of Alexandria,Standard,Modern Australian Cafe,2082.4,lunch
+Sydney,Opera Bar,Standard,Australian & Seafood,3288.0,dinner
+Sydney,Quay Restaurant,Luxury,Fine Dining Australian,18632.0,dinner
+Sydney,Bennelong,Luxury,Contemporary Australian,12056.0,dinner
+Dubai,Ravi Restaurant,Budget,Pakistani,567.5,lunch
+Dubai,Al Ustad Special Kabab,Budget,Persian,794.5,dinner
+Dubai,Operation Falafel,Standard,Middle Eastern Street Food,1021.5,breakfast
+Dubai,Arabian Tea House Cafe,Standard,Emirati,1816.0,snacks
+Dubai,Zuma Dubai,Luxury,Japanese,11804.0,dinner
+Dubai,Pierchic,Luxury,Seafood & Italian,10896.0,dinner
+Cape Town,Eastern Food Bazaar,Budget,Asian Street Food,414.0,lunch
+Cape Town,Truth Coffee Roasting,Budget,Cafe & Bakery,690.0,breakfast
+Cape Town,Miller's Thumb,Standard,Seafood & Grill,1932.0,dinner
+Cape Town,Kloof Street House,Standard,International Fusion,2208.0,dinner
+Cape Town,La Colombe,Luxury,French-Asian Fine Dining,10120.0,dinner
+Cape Town,FYN Restaurant,Luxury,Japanese-South African Tasting,8970.0,dinner
+Rio De Janeiro,Confeitaria Colombo,Budget,Brazilian Bakery & Café,684.0,breakfast
+Rio De Janeiro,Cervantes Copacabana,Budget,Brazilian Sandwiches,608.0,snacks
+Rio De Janeiro,Boteco Belmonte,Standard,Brazilian Pub Fare & Seafood,1672.0,lunch
+Rio De Janeiro,Aprazível,Standard,Contemporary Brazilian,2736.0,dinner
+Rio De Janeiro,Churrascaria Palace,Luxury,Brazilian Steakhouse,4408.0,dinner
+Rio De Janeiro,Oteque,Luxury,Fine Dining Seafood,9880.0,dinner
+Cairo,Koshary Abou Tarek,Budget,Traditional Egyptian,137.6,lunch
+Cairo,Felfela,Budget,Middle Eastern,258.0,breakfast
+Cairo,Zooba,Standard,Egyptian Street Food Fusion,516.0,snacks
+Cairo,Abou El Sid,Standard,Egyptian Comfort Food,946.0,dinner
+Cairo,The Revolving Restaurant,Luxury,International Fine Dining,3784.0,dinner
+Cairo,Le Deck,Luxury,French-Mediterranean,4816.0,dinner
+Singapore,Maxwell Food Centre,Budget,Singaporean Street Food,500.0,lunch
+Singapore,Liao Fan Hawker Chan,Budget,Cantonese Roast Meat,625.0,dinner
+Singapore,Din Tai Fung,Standard,Taiwanese Dim Sum,2187.5,lunch
+Singapore,Lau Pa Sat Satay Street,Standard,Local Barbecue & Seafood,1875.0,dinner
+Singapore,Odette,Luxury,Modern French Fine Dining,21875.0,dinner
+Singapore,JAAN by Kirk Westaway,Luxury,British Fine Dining,17500.0,dinner
+Bangkok,On Lok Yun,Budget,Traditional Thai-Chinese Breakfast,235.0,breakfast
+Bangkok,Rung Rueang Pork Noodles,Budget,Thai Noodle Soup,282.0,lunch
+Bangkok,Thip Samai Pad Thai,Budget,Thai Street Food,423.0,dinner
+Bangkok,Somtum Der,Standard,Isan / Thai,1057.5,lunch
+Bangkok,Supanniga Eating Room,Standard,Authentic Regional Thai,1762.5,dinner
+Bangkok,Le Du,Luxury,Modern Thai Fine Dining,9870.0,dinner
+Bangkok,Sühring,Luxury,Modern German Fine Dining,12925.0,dinner
+Rome,Pasticceria Regoli,Budget,Italian Bakery,450.0,breakfast
+Rome,Trapizzino Testaccio,Budget,Street Food / Pizza,810.0,lunch
+Rome,Tonnarello,Standard,Roman Pasta,2250.0,lunch
+Rome,Trattoria Da Enzo al 29,Standard,Traditional Roman,2880.0,dinner
+Rome,Aroma Restaurant,Luxury,Gourmet Italian,17100.0,dinner
+Rome,La Pergola,Luxury,Fine Dining Michelin Three-Star,25200.0,dinner
+Mumbai,Kyani & Co.,Budget,Parsi / Bakery,200.0,breakfast
+Mumbai,Aaswad,Budget,Maharashtrian,300.0,snacks
+Mumbai,Britannia & Co. Restaurant,Standard,Parsi / Iranian,850.0,lunch
+Mumbai,Mahesh Lunch Home,Standard,Seafood / Mangalorean,1400.0,dinner
+Mumbai,The Table,Luxury,Global / European,3800.0,dinner
+Mumbai,Wasabi by Morimoto,Luxury,Japanese,6500.0,dinner
+Delhi,Sitaram Diwan Chand,Budget,North Indian Street Food,150.0,breakfast
+Delhi,Karim's Chandni Chowk,Budget,Mughlai,450.0,dinner
+Delhi,Saravana Bhavan,Standard,South Indian,500.0,lunch
+Delhi,Cafe Lota,Standard,Modern Regional Indian,900.0,snacks
+Delhi,Bukhara - ITC Maurya,Luxury,North-West Frontier,5500.0,dinner
+Delhi,Indian Accent,Luxury,Modern Indian Fine Dining,6500.0,dinner
+Bengaluru,Vidyarthi Bhavan,Budget,South Indian,150.0,breakfast
+Bengaluru,CTR (Shri Sagar),Budget,South Indian Snacks & Coffee,180.0,snacks
+Bengaluru,Nagarjuna Restaurant,Standard,Andhra / South Indian,500.0,lunch
+Bengaluru,Toit Brewpub,Standard,Continental & Craft Beer,1200.0,dinner
+Bengaluru,Karavalli - The Gateway Hotel,Luxury,Coastal Indian,3500.0,dinner
+Bengaluru,Rim Naam - The Oberoi,Luxury,Thai Fine Dining,3000.0,dinner
+Srinagar,Krishna Vaishno Dhaba,Budget,North Indian Vegetarian,250.0,lunch
+Srinagar,Imran Cafeteria,Budget,Kashmiri Street Food & Kebabs,200.0,snacks
+Srinagar,Ahdoos Restaurant,Standard,Authentic Kashmiri Wazwan,900.0,dinner
+Srinagar,Stream Restaurant,Standard,Multi-cuisine & North Indian,750.0,lunch
+Srinagar,The Chinar at The Lalit,Luxury,Fine Dining Kashmiri & Global,3000.0,dinner
+Srinagar,Jade Dragon at Vivanta,Luxury,Chinese & Asian Fine Dining,2500.0,dinner

@@ -1,0 +1,95 @@
+destination,transport_mode,category,price_per_day,fuel_price_per_litre
+Ooty,Local Bus,Budget,120,102.5
+Ooty,Shared Auto,Budget,150,102.5
+Ooty,Private Taxi,Standard,1400,102.5
+Ooty,Self Drive Cab,Luxury,2800,102.5
+Goa,Rented Scooter,Budget,400,98.0
+Goa,Local Bus,Budget,100,98.0
+Goa,Private Taxi,Standard,1600,98.0
+Goa,Self Drive Car,Luxury,2500,98.0
+Manali,Local Bus,Budget,150,96.5
+Manali,Shared Taxi,Budget,300,96.5
+Manali,Private Taxi,Standard,1800,96.5
+Manali,Private Cab with Driver,Luxury,3200,96.5
+Jaipur,Local Bus,Budget,100,104.8
+Jaipur,Auto Rickshaw,Budget,250,104.8
+Jaipur,Private Taxi,Standard,1500,104.8
+Jaipur,Chauffeur Driven Car,Luxury,3000,104.8
+Munnar,Local Bus,Budget,130,103.2
+Munnar,Shared Jeep,Budget,300,103.2
+Munnar,Private Taxi,Standard,1700,103.2
+Munnar,Private Cab with Driver,Luxury,3100,103.2
+Coorg,Local Bus,Budget,120,101.9
+Coorg,Shared Auto,Budget,200,101.9
+Coorg,Private Taxi,Standard,1600,101.9
+Coorg,Self Drive Car,Luxury,2700,101.9
+Rishikesh,Local Bus,Budget,100,95.4
+Rishikesh,Shared Auto,Budget,180,95.4
+Rishikesh,Private Taxi,Standard,1300,95.4
+Rishikesh,Private Cab with Driver,Luxury,2600,95.4
+Pondicherry,Rented Bicycle,Budget,100,100.2
+Pondicherry,Auto Rickshaw,Budget,220,100.2
+Pondicherry,Private Taxi,Standard,1400,100.2
+Pondicherry,Self Drive Car,Luxury,2400,100.2
+Udaipur,Local Bus,Budget,110,104.1
+Udaipur,Auto Rickshaw,Budget,260,104.1
+Udaipur,Private Taxi,Standard,1700,104.1
+Udaipur,Chauffeur Driven Car,Luxury,3300,104.1
+Darjeeling,Local Bus,Budget,120,97.6
+Darjeeling,Shared Jeep,Budget,280,97.6
+Darjeeling,Private Taxi,Standard,1500,97.6
+Darjeeling,Private Cab with Driver,Luxury,2900,97.6
+Paris,Metro & Bus Day Pass (Navigo / Paris Visite),Budget,760.75,165.58
+Paris,Compact Rental Car,Standard,4922.5,165.58
+Paris,Private Chauffeur Service,Luxury,34010.0,165.58
+Tokyo,Tokyo Subway 24-Hour Pass,Budget,440.0,96.25
+Tokyo,Compact Rental Car,Standard,4125.0,96.25
+Tokyo,Private Executive Chauffeur,Luxury,35750.0,96.25
+London,London Underground & Bus (Oyster Day Cap),Budget,905.25,157.62
+London,Compact Rental Car,Standard,4792.5,157.62
+London,Private Executive Chauffeur,Luxury,37275.0,157.62
+New York,MTA Subway & Local Bus Pass,Budget,417.5,87.67
+New York,NYC Yellow Taxi / Uber Rideshare,Standard,5427.5,87.67
+New York,Rental Car (Sedan),Standard,7097.5,87.67
+New York,Private Luxury Chauffeur Service,Luxury,31730.0,87.67
+Sydney,Opal Public Transit Pass,Budget,920.64,112.34
+Sydney,Standard Sedan Rental,Standard,4110.0,112.34
+Sydney,Private Luxury Chauffeur,Luxury,20824.0,112.34
+Dubai,Dubai Metro & Public Bus Pass (Nol Red),Budget,499.4,68.78
+Dubai,Self-Drive Rental Sedan (Toyota Corolla),Standard,2724.0,68.78
+Dubai,Standard Taxi / App Ride (Careem),Standard,3632.0,68.78
+Dubai,Private Chauffeur Luxury Sedan (Lexus / Mercedes),Luxury,15890.0,68.78
+Cape Town,MyCiTi Bus Day Pass,Budget,391.0,108.1
+Cape Town,Standard Sedan Rental,Standard,2208.0,108.1
+Cape Town,Private Chauffeur & Luxury SUV,Luxury,12880.0,108.1
+Rio De Janeiro,MetrôRio & Public Bus,Budget,380.0,88.92
+Rio De Janeiro,Rental Car / Rideshare App,Standard,2128.0,88.92
+Rio De Janeiro,Private Chauffeur Service,Luxury,11400.0,88.92
+Cairo,Cairo Metro & Public Transit,Budget,103.2,23.65
+Cairo,Private Taxi / Rideshare (Uber),Standard,1032.0,23.65
+Cairo,Private Chauffeur & Luxury Car,Luxury,5504.0,23.65
+Singapore,MRT & Public Bus (EZ-Link Transit Pass),Budget,625.0,178.12
+Singapore,Metered Taxi / Grab Rides,Standard,3437.5,178.12
+Singapore,Private Executive Chauffeur,Luxury,17500.0,178.12
+Bangkok,BTS Skytrain & MRT Pass,Budget,352.5,90.48
+Bangkok,Rental Scooter,Budget,705.0,90.48
+Bangkok,Private Taxi / Grab Car,Standard,2820.0,90.48
+Bangkok,Self-Drive Rental Sedan,Standard,3525.0,90.48
+Bangkok,Private Chauffeur Luxury Van,Luxury,9400.0,90.48
+Rome,Public Transit (Metro & Bus Pass),Budget,630.0,166.5
+Rome,Car Rental / City Taxi,Standard,4950.0,166.5
+Rome,Private Luxury Chauffeur,Luxury,31500.0,166.5
+Mumbai,Local Train & Bus Transit,Budget,150.0,104.2
+Mumbai,Auto Rickshaw / Shared Transit,Budget,500.0,104.2
+Mumbai,Private Sedan Cab Rental,Standard,2500.0,104.2
+Mumbai,Self-Drive Car Rental,Standard,3200.0,104.2
+Mumbai,Luxury Chauffeur Service,Luxury,7500.0,104.2
+Delhi,Delhi Metro & Shared Auto,Budget,200.0,94.72
+Delhi,Private Taxi / App Cab (Sedan),Standard,1800.0,94.72
+Delhi,Chauffeur Driven Luxury Sedan,Luxury,8500.0,94.72
+Bengaluru,BMTC Bus & Namma Metro Day Pass,Budget,100.0,102.86
+Bengaluru,Self-Drive Car Rental,Standard,1800.0,102.86
+Bengaluru,Private Chauffeur Luxury Sedan,Luxury,5000.0,102.86
+Srinagar,Shared Auto & Local Bus,Budget,400.0,100.5
+Srinagar,Private Sedan Cab (Etios/Dzire),Standard,2500.0,100.5
+Srinagar,Luxury Chauffeur Driven SUV (Innova Crysta),Luxury,4500.0,100.5

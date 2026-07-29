@@ -1,15 +1,72 @@
-/* Minimal reset to avoid layout conflicts with App.css */
-:root {
-  color-scheme: light;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-color: #fdf2f8;
+  @apply bg-paper text-ink font-body;
+  background-image:
+    linear-gradient(rgba(22,49,61,0.035) 1px, transparent 1px);
+  background-size: 100% 2.1rem;
 }
 
-#root {
-  width: 100%;
-  min-height: 100vh;
+::selection {
+  background-color: #E2A63B55;
+}
+
+/* Focus visibility for accessibility */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+  outline: 2px solid #2F6F5E;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Signature element: passport-stamp style badge for the budget verdict */
+.stamp-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  padding: 0.4rem 1.1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  transform: rotate(-3deg);
+  position: relative;
+}
+
+.stamp-badge::before,
+.stamp-badge::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px dashed currentColor;
+  border-radius: 9999px;
+  opacity: 0.5;
+}
+
+.ledger-divider {
+  border: none;
+  border-top: 1px dashed #16313D33;
+  margin: 1.5rem 0;
+}
+
+.card-lift {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.card-lift:hover {
+  transform: translateY(-2px);
 }
