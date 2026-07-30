@@ -78,5 +78,10 @@
     "currency_code": "INR",
     "currency_symbol": "₹",
     "rate_to_inr": 1.0
+  },
+  "Bangalore": {
+    "currency_code": "INR",
+    "currency_symbol": "₹",
+    "rate_to_inr": 1.0
   }
 }
