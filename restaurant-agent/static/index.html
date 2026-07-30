@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RestaurantAI — Global Agentic Recommendations</title>
+  <meta name="description" content="Discover top restaurants worldwide powered by Gemini AI. Explore Japan, France, India, Italy, Turkey, Vietnam, UK, Spain, Denmark, Taiwan, Germany, and more." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Top Navbar -->
+  <header class="topbar" id="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <span class="brand-icon">🍽</span>
+        <span class="brand-name">Restaurant<span class="brand-ai">AI</span></span>
+        <span class="brand-badge">Global v2.0</span>
+      </div>
+      <nav class="topbar-nav">
+        <button class="nav-item active" data-tab="recommend"><span class="nav-icon">✨</span> Recommend</button>
+        <button class="nav-item" data-tab="explore"><span class="nav-icon">🌍</span> Explore</button>
+        <button class="nav-item" data-tab="browse"><span class="nav-icon">🔎</span> Browse</button>
+        <button class="nav-item" data-tab="manage"><span class="nav-icon">🗄</span> Manage DB</button>
+      </nav>
+      <div class="topbar-status">
+        <span class="pulse-dot"></span>
+        <span>Agent Active</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Banner (only on Recommend tab) -->
+  <div class="hero" id="hero-banner">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">✨ Powered by Gemini AI · 12 Countries · 60+ Restaurants</div>
+      <h1 class="hero-title">Discover the World's<br><span class="hero-gradient">Best Restaurants</span></h1>
+      <p class="hero-sub">Ask in natural language. Our AI agent parses your preferences, searches across 12 countries, ranks results with MAUT scoring, and explains every recommendation.</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" id="stat-count">—</span><span class="stat-label">Restaurants</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" id="stat-countries">—</span><span class="stat-label">Countries</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">4</span><span class="stat-label">AI Agents</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num" id="stat-cities">—</span><span class="stat-label">Cities</span></div>
+      </div>
+    </div>
+    <div class="hero-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- TAB: RECOMMEND -->
+    <section class="tab-panel active" id="tab-recommend">
+      <div class="two-col">
+        <!-- Left -->
+        <div class="col-left">
+          <div class="card">
+            <div class="card-title">Natural Language Query</div>
+            <div class="input-row">
+              <input id="query-input" type="text" placeholder="e.g. cheap vegan food in London…" autocomplete="off" />
+              <button id="search-btn" class="btn-primary">
+                <span id="btn-text">Ask AI ✨</span>
+                <span id="btn-spinner" class="spinner hidden"></span>
+              </button>
+            </div>
+            <div class="chips-label">Quick Prompts</div>
+            <div class="chips">
+              <button class="chip" data-query="Cheap vegetarian food in Tokyo">🌱 Tokyo Veggie</button>
+              <button class="chip" data-query="Vegan French bistro in Paris">🥐 Paris Vegan</button>
+              <button class="chip" data-query="Best Halal food in Mumbai">🕌 Mumbai Halal</button>
+              <button class="chip" data-query="Top rated dinner in London">🇬🇧 London Dinner</button>
+              <button class="chip" data-query="Best ramen in Tokyo">🍜 Tokyo Ramen</button>
+              <button class="chip" data-query="Vegan breakfast in Berlin">🥨 Berlin Vegan</button>
+              <button class="chip" data-query="Fine dining in Copenhagen">🌿 Copenhagen Fine</button>
+              <button class="chip" data-query="Street food in Bangkok">🌶 Bangkok Street</button>
+            </div>
+            <details class="accordion" open>
+              <summary>⚙ Advanced Filters</summary>
+              <div class="filters-grid">
+                <div class="field"><label>Location / City</label><input id="f-location" type="text" value="Tokyo" /></div>
+                <div class="field">
+                  <label>Country</label>
+                  <select id="f-country">
+                    <option value="">Any Country</option>
+                    <option value="Japan">🇯🇵 Japan</option>
+                    <option value="France">🇫🇷 France</option>
+                    <option value="USA">🇺🇸 USA</option>
+                    <option value="Italy">🇮🇹 Italy</option>
+                    <option value="India">🇮🇳 India</option>
+                    <option value="UK">🇬🇧 UK</option>
+                    <option value="Thailand">🇹🇭 Thailand</option>
+                    <option value="Vietnam">🇻🇳 Vietnam</option>
+                    <option value="Turkey">🇹🇷 Turkey</option>
+                    <option value="Australia">🇦🇺 Australia</option>
+                    <option value="Spain">🇪🇸 Spain</option>
+                    <option value="Denmark">🇩🇰 Denmark</option>
+                    <option value="Taiwan">🇹🇼 Taiwan</option>
+                    <option value="Germany">🇩🇪 Germany</option>
+                    <option value="Argentina">🇦🇷 Argentina</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Cuisine</label>
+                  <select id="f-cuisine">
+                    <option value="Any">Any</option>
+                    <option value="Japanese">Japanese</option>
+                    <option value="French">French</option>
+                    <option value="Italian">Italian</option>
+                    <option value="American">American</option>
+                    <option value="Indian">Indian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Thai">Thai</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Vietnamese">Vietnamese</option>
+                    <option value="Turkish">Turkish</option>
+                    <option value="Mediterranean">Mediterranean</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Nordic">Nordic</option>
+                    <option value="German">German</option>
+                    <option value="Australian">Australian</option>
+                    <option value="British">British</option>
+                    <option value="Argentine">Argentine</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Diet</label>
+                  <select id="f-diet">
+                    <option value="Any">Any</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Halal">Halal</option>
+                    <option value="Non-Vegetarian">Non-Vegetarian</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Budget</label>
+                  <select id="f-budget">
+                    <option value="Any">Any</option>
+                    <option value="Low">Low ($)</option>
+                    <option value="Medium">Medium ($$)</option>
+                    <option value="High">High ($$$)</option>
+                  </select>
+                </div>
+                <div class="field"><label>Min Rating</label><input id="f-rating" type="number" step="0.1" min="1" max="5" value="4.0" /></div>
+                <div class="field">
+                  <label>Meal Time</label>
+                  <select id="f-meal">
+                    <option value="">Any</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Lunch">Lunch</option>
+                    <option value="Dinner">Dinner</option>
+                  </select>
+                </div>
+              </div>
+            </details>
+          </div>
+
+          <!-- Agent Trace -->
+          <div class="card trace-card">
+            <div class="trace-header">
+              <span class="card-title">🧠 Agent Reasoning Trace</span>
+              <span id="exec-badge" class="badge-green">0 ms</span>
+            </div>
+            <div id="trace-container" class="trace-list">
+              <div class="trace-empty">Submit a query to see live agent steps.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Results -->
+        <div class="col-right">
+          <div id="pref-tags" class="pref-tags"></div>
+          <div id="results-container" class="results-container">
+            <div class="empty-state">
+              <div class="empty-icon">🌍</div>
+              <div class="empty-title">Ready to Explore the World</div>
+              <div class="empty-sub">Type a query or click a quick prompt to activate the AI agent across 12 countries.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB: WORLD EXPLORER -->
+    <section class="tab-panel" id="tab-explore">
+      <div class="page-header">
+        <h2 class="section-title">🌍 World Restaurant Explorer</h2>
+        <p class="section-sub">Browse restaurants by country — click a country to explore its cities and restaurants</p>
+      </div>
+      <div id="country-grid" class="country-grid">
+        <div class="loading-spinner-wrap"><div class="spinner-lg"></div></div>
+      </div>
+      <!-- Country Detail Panel -->
+      <div id="country-detail" class="country-detail hidden">
+        <div class="country-detail-header">
+          <button class="btn-back" id="btn-back-countries">← Back to Countries</button>
+          <div class="country-detail-title">
+            <span id="detail-flag" class="detail-flag"></span>
+            <span id="detail-country-name"></span>
+          </div>
+        </div>
+        <div id="country-detail-stats" class="country-detail-stats"></div>
+        <div id="country-restaurant-grid" class="browse-grid"></div>
+      </div>
+    </section>
+
+    <!-- TAB: BROWSE -->
+    <section class="tab-panel" id="tab-browse">
+      <div class="page-header">
+        <h2 class="section-title">Browse All Restaurants</h2>
+        <p class="section-sub">Filter and explore the complete global restaurant dataset</p>
+      </div>
+      <div class="card browse-filters">
+        <input id="br-location" type="text" placeholder="Filter by city…" />
+        <select id="br-country">
+          <option value="">All Countries</option>
+          <option value="Japan">🇯🇵 Japan</option>
+          <option value="France">🇫🇷 France</option>
+          <option value="USA">🇺🇸 USA</option>
+          <option value="Italy">🇮🇹 Italy</option>
+          <option value="India">🇮🇳 India</option>
+          <option value="UK">🇬🇧 UK</option>
+          <option value="Thailand">🇹🇭 Thailand</option>
+          <option value="Vietnam">🇻🇳 Vietnam</option>
+          <option value="Turkey">🇹🇷 Turkey</option>
+          <option value="Australia">🇦🇺 Australia</option>
+          <option value="Spain">🇪🇸 Spain</option>
+          <option value="Denmark">🇩🇰 Denmark</option>
+          <option value="Taiwan">🇹🇼 Taiwan</option>
+          <option value="Germany">🇩🇪 Germany</option>
+          <option value="Argentina">🇦🇷 Argentina</option>
+        </select>
+        <select id="br-cuisine">
+          <option value="">All Cuisines</option>
+          <option value="Japanese">Japanese</option>
+          <option value="French">French</option>
+          <option value="Italian">Italian</option>
+          <option value="American">American</option>
+          <option value="Indian">Indian</option>
+          <option value="Chinese">Chinese</option>
+          <option value="Thai">Thai</option>
+          <option value="Vietnamese">Vietnamese</option>
+          <option value="Turkish">Turkish</option>
+          <option value="Mediterranean">Mediterranean</option>
+          <option value="Spanish">Spanish</option>
+          <option value="Nordic">Nordic</option>
+          <option value="German">German</option>
+          <option value="Australian">Australian</option>
+          <option value="British">British</option>
+          <option value="Argentine">Argentine</option>
+        </select>
+        <select id="br-type">
+          <option value="">All Diets</option>
+          <option value="Vegetarian">Vegetarian</option>
+          <option value="Vegan">Vegan</option>
+          <option value="Halal">Halal</option>
+          <option value="Non-Vegetarian">Non-Vegetarian</option>
+        </select>
+        <select id="br-budget">
+          <option value="">All Budgets</option>
+          <option value="Low">Low ($)</option>
+          <option value="Medium">Medium ($$)</option>
+          <option value="High">High ($$$)</option>
+        </select>
+        <button class="btn-primary" onclick="browseRestaurants()">🔍 Search</button>
+        <button class="btn-ghost" onclick="clearBrowseFilters()">Clear</button>
+      </div>
+      <div id="browse-count" class="browse-count"></div>
+      <div id="browse-results" class="browse-grid"></div>
+    </section>
+
+    <!-- TAB: MANAGE DB -->
+    <section class="tab-panel" id="tab-manage">
+      <div class="page-header">
+        <h2 class="section-title">Manage Restaurant Database</h2>
+        <p class="section-sub">Add, edit or remove restaurants from the global SQLite database</p>
+      </div>
+      <div class="card" style="max-width:720px">
+        <div class="card-title" id="form-title">Add New Restaurant</div>
+        <input type="hidden" id="edit-id" value="" />
+        <div class="filters-grid filters-grid-3">
+          <div class="field"><label>Name *</label><input id="db-name" type="text" placeholder="Restaurant name" /></div>
+          <div class="field"><label>City *</label><input id="db-location" type="text" placeholder="e.g. Tokyo" /></div>
+          <div class="field">
+            <label>Country</label>
+            <select id="db-country">
+              <option value="">— Select Country —</option>
+              <option value="Japan">🇯🇵 Japan</option>
+              <option value="France">🇫🇷 France</option>
+              <option value="USA">🇺🇸 USA</option>
+              <option value="Italy">🇮🇹 Italy</option>
+              <option value="India">🇮🇳 India</option>
+              <option value="UK">🇬🇧 UK</option>
+              <option value="Thailand">🇹🇭 Thailand</option>
+              <option value="Vietnam">🇻🇳 Vietnam</option>
+              <option value="Turkey">🇹🇷 Turkey</option>
+              <option value="Australia">🇦🇺 Australia</option>
+              <option value="Spain">🇪🇸 Spain</option>
+              <option value="Denmark">🇩🇰 Denmark</option>
+              <option value="Taiwan">🇹🇼 Taiwan</option>
+              <option value="Germany">🇩🇪 Germany</option>
+              <option value="Argentina">🇦🇷 Argentina</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Cuisine</label>
+            <select id="db-cuisine">
+              <option value="Any">Any</option>
+              <option value="Japanese">Japanese</option>
+              <option value="French">French</option>
+              <option value="Italian">Italian</option>
+              <option value="American">American</option>
+              <option value="Indian">Indian</option>
+              <option value="Chinese">Chinese</option>
+              <option value="Thai">Thai</option>
+              <option value="Mexican">Mexican</option>
+              <option value="Vietnamese">Vietnamese</option>
+              <option value="Turkish">Turkish</option>
+              <option value="Mediterranean">Mediterranean</option>
+              <option value="Spanish">Spanish</option>
+              <option value="Nordic">Nordic</option>
+              <option value="German">German</option>
+              <option value="Australian">Australian</option>
+              <option value="British">British</option>
+              <option value="Argentine">Argentine</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Diet Type</label>
+            <select id="db-type">
+              <option value="Any">Any</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Halal">Halal</option>
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Budget</label>
+            <select id="db-budget">
+              <option value="Any">Any</option>
+              <option value="Low">Low ($)</option>
+              <option value="Medium">Medium ($$)</option>
+              <option value="High">High ($$$)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Meal Time</label>
+            <select id="db-meal">
+              <option value="Morning">Morning</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+            </select>
+          </div>
+          <div class="field"><label>Rating</label><input id="db-rating" type="number" step="0.1" min="1" max="5" value="4.5" /></div>
+          <div class="field"><label>Address</label><input id="db-address" type="text" placeholder="Optional" /></div>
+        </div>
+        <div class="field" style="margin-top:12px">
+          <label>Description</label>
+          <input id="db-desc" type="text" placeholder="Short description (optional)" />
+        </div>
+        <div class="form-actions">
+          <button id="save-btn" class="btn-primary" onclick="saveRestaurant()">💾 Save Restaurant</button>
+          <button id="cancel-edit-btn" class="btn-ghost hidden" onclick="cancelEdit()">Cancel</button>
+        </div>
+        <div id="form-msg" class="form-msg"></div>
+      </div>
+
+      <div class="card" style="margin-top:24px">
+        <div class="table-header">
+          <span class="card-title">All Restaurants</span>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input id="tbl-search" type="text" placeholder="Search by name…" class="tbl-search-input" oninput="filterTable()" />
+            <button class="btn-ghost" onclick="loadTable()">↻ Refresh</button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table id="db-table">
+            <thead>
+              <tr>
+                <th>ID</th><th>Name</th><th>City</th><th>Country</th><th>Cuisine</th>
+                <th>Diet</th><th>Budget</th><th>Rating</th><th>Meal</th><th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="db-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">🍽 Restaurant<span style="color:var(--accent)">AI</span> <span class="footer-version">Global v2.0</span></div>
+      <div class="footer-links">
+        <span>12 Countries · FastAPI · Gemini AI · SQLite</span>
+      </div>
+      <div class="footer-right">
+        <span class="pulse-dot"></span> Agent Active
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
